@@ -72,3 +72,15 @@ class PasswordsController < Devise::PasswordsController
   end
 end
 ```
+
+Now you can add RuCaptcha view code into Devise views.
+
+And then change `routes.rb`:
+
+```rb
+devise_for :users, controllers: {
+  registrations: :registrations,
+  sessions: :sessions,
+  passwords: :passwords
+}
+```
