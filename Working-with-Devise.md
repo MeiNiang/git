@@ -75,6 +75,19 @@ end
 
 Now you can add RuCaptcha view code into Devise views.
 
+```erb
+<%= f.input :_rucaptcha do %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.input_field :_rucaptcha, name: '_rucaptcha', class: 'form-control' %>
+    </div>
+    <div class="col-sm-4">
+      <a class="rucaptcha-image-box" href="#"><%= rucaptcha_image_tag %></a>
+    </div>
+  </div>
+<% end %>
+```
+
 And then change `routes.rb`:
 
 ```rb
