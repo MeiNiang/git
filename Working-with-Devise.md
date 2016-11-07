@@ -41,7 +41,7 @@ class SessionsController < Devise::SessionsController
 
   def valify_captcha!
     unless verify_rucaptcha?
-      redirect_to new_user_session_path, alert: 'Invalid captcha code'
+      redirect_to new_user_session_path, alert: t('rucaptcha.invalid')
       return
     end
     true
